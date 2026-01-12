@@ -1,0 +1,4 @@
+{
+  "error": "meta_parse_failed",
+  "raw": "```json\n{\n  \"workflow_issues\": [\n    \"Architect parse failed due to malformed JSON, blocking further processing.\"\n  ],\n  \"prompt_improvements\": [\n    \"Ensure that the JSON structure is validated before processing to avoid parsing errors.\"\n  ],\n  \"tool_improvements\": [\n    \"Implement a JSON validation tool to check the syntax before parsing.\"\n  ],\n  \"memory_improvements\": [\n    \"Store validated JSON structures to prevent repeated parsing errors.\"\n  ]\n}\n```"
+}

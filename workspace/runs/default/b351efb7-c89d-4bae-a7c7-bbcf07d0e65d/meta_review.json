@@ -1,0 +1,4 @@
+{
+  "error": "meta_parse_failed",
+  "raw": "```json\n{\n  \"workflow_issues\": [\n    \"Architect parse failed, blocking progress.\",\n    \"Changes summary not available due to parse failure.\"\n  ],\n  \"prompt_improvements\": [\n    \"Ensure the architect's output is strictly valid JSON to prevent parse failures.\"\n  ],\n  \"tool_improvements\": [\n    \"Implement a JSON validation tool to check the architect's output before parsing.\"\n  ],\n  \"memory_improvements\": [\n    \"Store intermediate results in a more robust format to handle parse failures gracefully.\"\n  ]\n}\n```"
+}

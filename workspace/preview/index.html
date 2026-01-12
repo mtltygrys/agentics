@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Preview</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logo">AI</div>
+      <div>
+        <div class="name">Serious Builder Preview</div>
+        <div class="tag">Stable • Patch-only • Premium</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <h1>Live Preview is ready.</h1>
+        <p class="lead">Tell the Orchestrator what you want. It will refine this site without resetting it.</p>
+        <div class="ctaRow">
+          <a class="btn" href="#contact">Start a project</a>
+          <a class="btn btn--ghost" href="#services">See services</a>
+        </div>
+        <div class="chips">
+          <span>Read → Patch → Verify</span>
+          <span>No silent changes</span>
+          <span>Permission gates</span>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="cardTitle">Next Steps</div>
+        <ol>
+          <li>Open the app UI</li>
+          <li>Describe changes in chat</li>
+          <li>Approve fixes when asked</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <article class="panel">
+          <h3>Websites</h3>
+          <p>Premium landing pages, company sites, conversions-first layouts.</p>
+        </article>
+        <article class="panel">
+          <h3>Apps</h3>
+          <p>Front + back + integrations. Iterative build, no resets.</p>
+        </article>
+        <article class="panel">
+          <h3>Automation</h3>
+          <p>Browser workflows, ops tools, internal dashboards.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="grid">
+        <article class="quote">
+          <p>“Finally, the AI doesn’t wipe my work. It improves it.”</p>
+          <div class="who">— You, soon</div>
+        </article>
+        <article class="quote">
+          <p>“Feels like a real team. Clear, consistent, professional.”</p>
+          <div class="who">— A future client</div>
+        </article>
+        <article class="quote">
+          <p>“Patch-only changes are a game changer.”</p>
+          <div class="who">— Anyone who builds</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="contact">
+        <div>
+          <h2>Contact</h2>
+          <p>CTA placeholder — Orchestrator will replace with your real details when you tell it.</p>
+        </div>
+        <a class="btn" href="#hero">Back to top</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="y"></span> Serious AI Builder</div>
+    <div class="muted">This preview is edited by agents via patch-only rules.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

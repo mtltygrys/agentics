@@ -1,0 +1,55 @@
+{
+  "version": "0.1.0",
+  "capabilities": {
+    "projects": {
+      "status": "present",
+      "notes": "Project structure and docker-compose scaffold included. UI project list will be added in next phases."
+    },
+    "workspace_files": {
+      "status": "present",
+      "backend_tools": ["create_file", "read_file", "patch_file", "list_workspace"],
+      "root": "backend/workspace"
+    },
+    "live_preview": {
+      "status": "present",
+      "mount": "/preview",
+      "root": "backend/workspace/preview"
+    },
+    "chat": {
+      "status": "present",
+      "endpoint": "/api/chat",
+      "notes": "Uses Mistral chat completions with tool calling."
+    },
+    "workflow": {
+      "status": "present",
+      "endpoint": "/api/workflow",
+      "notes": "Multi-step iterative builder loop with post-run Architect compression, persistent notes, and Meta-Review optimization. Artifacts saved under backend/workspace/runs/."
+    },
+    "run_artifacts": {
+      "status": "present",
+      "endpoints": ["/api/runs", "/api/runs/{project_id}/{trace_id}"],
+      "notes": "Lists and reads run artifacts (run.json, architect_summary.json, notes.md, meta_review.json)."
+    },
+    "agents_api": {
+      "status": "present",
+      "endpoints": ["/api/agents/create", "/api/agents/complete"],
+      "notes": "Lightweight wrapper over Mistral agents-style behavior."
+    },
+    "web_research": {
+      "status": "planned",
+      "notes": "Will integrate Mistral web_search + local browser automation (Playwright preferred, ChromeDriver optional)."
+    },
+    "vision_review": {
+      "status": "planned",
+      "notes": "Will use a vision model to critique preview screenshots and propose UI improvements."
+    },
+    "screen_annotation": {
+      "status": "planned",
+      "notes": "In-app screenshot mark-up to target UI components without file paths."
+    },
+    "deployment": {
+      "status": "planned",
+      "notes": "Will support local and remote deployments behind explicit permission gates."
+    }
+  }
+}

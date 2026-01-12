@@ -1,0 +1,51 @@
+{
+  "version": "1.0.0",
+  "description": "System map (self-awareness). Single source of truth for module locations, responsibilities, and runtime behavior.",
+  "paths": {
+    "project_root": ".",
+    "frontend_root": "frontend",
+    "backend_root": "backend",
+    "scripts_root": "scripts",
+    "system_root": "system"
+  },
+  "defaults": {
+    "language": "en",
+    "jurisdiction": "ask_if_relevant",
+    "jurisdiction_options": ["PL", "UK"],
+    "markets": "infer_from_user_words",
+    "truth_policy": "no_inventing_facts",
+    "freshness_policy": "verify_if_time_sensitive_or_high_stakes"
+  },
+  "frontend": {
+    "framework": "react",
+    "entry": "frontend/src/index.js",
+    "app": "frontend/src/App.js",
+    "package_json": "frontend/package.json"
+  },
+  "backend": {
+    "framework": "fastapi",
+    "entry": "backend/main.py",
+    "workspace_dir": "backend/workspace",
+    "preview_dir": "backend/workspace/preview",
+    "runs_dir": "backend/workspace/runs",
+    "runtime_memory": "backend/workspace/project_memory.json",
+    "static_preview_mount": "/preview",
+    "health_endpoint": "/health",
+    "api_endpoints": [
+      "/api/models",
+      "/api/system/maps",
+      "/api/runs",
+      "/api/runs/{project_id}/{trace_id}",
+      "/api/chat",
+      "/api/workflow",
+      "/api/agents/create",
+      "/api/agents/complete"
+    ]
+  },
+  "runtime": {
+    "docker_compose": "docker-compose.yml",
+    "start_script": "scripts/start.sh",
+    "stop_script": "scripts/stop.sh",
+    "env_example": ".env.example"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "projects": {
+    "default": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": true,
+      "web": true
+    },
+    "proj_4fe58000": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_3c747afc": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_4d68d509": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_714cc6b3": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_d328aa37": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": true,
+      "web": true
+    },
+    "proj_82a24ce5": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": true,
+      "web": true
+    },
+    "proj_53664bf1": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_73cd211f": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_a556bff7": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_a5136798": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    },
+    "proj_ef4df952": {
+      "self_modify": false,
+      "file_write": true,
+      "shell": false,
+      "web": false
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0",
+  "preview": {
+    "root": "backend/workspace/preview",
+    "default_entry": "index.html",
+    "default_styles": "styles.css"
+  },
+  "components": {
+    "PreviewRoot": {
+      "description": "Default preview landing page loaded in iframe.",
+      "files": ["backend/workspace/preview/index.html"],
+      "owner_agent": "builder_frontend"
+    },
+    "PreviewStyles": {
+      "description": "Primary CSS for preview pages.",
+      "files": ["backend/workspace/preview/styles.css"],
+      "owner_agent": "builder_frontend"
+    }
+  },
+  "interaction_model": {
+    "user_intent_to_component": "User describes section (e.g., hero/services/testimonials). System resolves to component and patches the owning files.",
+    "no_file_paths_in_ui": true
+  }
+}

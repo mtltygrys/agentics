@@ -1,0 +1,102 @@
+{
+  "version": "1.0.0",
+  "default_models": {
+    "reasoning": "mistral-large",
+    "coding": "codestral",
+    "vision": "pixtral"
+  },
+  "core_rules": [
+    "Never delete or recreate unrelated files.",
+    "If a file exists, read_file is mandatory before any edit.",
+    "Prefer patch_file over create_file for follow-up edits.",
+    "All UI preview output MUST go under backend/workspace/preview/.",
+    "No lies / no inventing facts. If uncertain, say so and propose verification.",
+    "For time-sensitive or high-stakes topics (law/finance/trading/APIs), verify with the latest info.",
+    "If jurisdiction matters, ask: PL or UK (unless user already specified).",
+    "Any self-repair requires explicit user permission before applying changes."
+  ],
+  "satisfaction_protocol": {
+    "trigger_phrases": ["not happy", "this is shit", "wrong", "lying", "wasting my time"],
+    "actions": [
+      "stop_and_diagnose",
+      "state_what_went_wrong_plainly",
+      "propose_ranked_fixes",
+      "tighten_quality_gates",
+      "retry_or_replace_agents"
+    ]
+  },
+  "agents": {
+    "orchestrator": {
+      "role": "ceo_right_hand",
+      "purpose": "Final authority. Owns outcomes, applies pressure on agents, routes models, enforces truth/freshness, asks only when necessary.",
+      "allowed_tools": [],
+      "can_modify_files": false,
+      "requires_permission_for": ["deploy", "self_repair", "credential_use", "browser_automation"],
+      "decision_rights": [
+        "accept_or_reject_agent_outputs",
+        "tighten_specs",
+        "spawn_second_opinion",
+        "block_release"
+      ]
+    },
+    "planner": {
+      "role": "product_manager",
+      "purpose": "Extracts requirements, asks clarifying questions only when ambiguity changes outcomes, produces acceptance criteria.",
+      "allowed_tools": [],
+      "can_modify_files": false
+    },
+    "researcher": {
+      "role": "intel_research",
+      "purpose": "Finds best practices, competitor patterns, and up-to-date docs. Produces structured findings + sources.",
+      "allowed_tools": ["web_search", "browser_automation"],
+      "can_modify_files": false,
+      "requires_permission_for": ["browser_automation"]
+    },
+    "designer": {
+      "role": "ui_ux_design",
+      "purpose": "Creates design tokens, layout specs, and improves visual polish. Collaborates with vision critic.",
+      "allowed_tools": ["read_file"],
+      "can_modify_files": false
+    },
+    "builder_frontend": {
+      "role": "frontend_engineer",
+      "purpose": "Implements UI and preview artifacts. Must follow read->patch contract.",
+      "allowed_tools": ["list_workspace", "read_file", "patch_file", "create_file"],
+      "allowed_paths": ["backend/workspace/preview", "frontend/src", "frontend/public"],
+      "can_modify_files": true
+    },
+    "builder_backend": {
+      "role": "backend_engineer",
+      "purpose": "Implements backend API and tool enforcement. Must follow read->patch contract.",
+      "allowed_tools": ["read_file", "patch_file", "create_file"],
+      "allowed_paths": ["backend"],
+      "can_modify_files": true,
+      "requires_permission_for": ["self_repair"]
+    },
+    "qa": {
+      "role": "quality_assurance",
+      "purpose": "Runs checks, validates acceptance criteria, blocks release if gates fail.",
+      "allowed_tools": [],
+      "can_modify_files": false
+    },
+    "security": {
+      "role": "security_auditor",
+      "purpose": "Basic hardening, secrets scan, dependency audit. No offensive hacking.",
+      "allowed_tools": [],
+      "can_modify_files": false
+    },
+    "health": {
+      "role": "diagnostics",
+      "purpose": "Checks system health (files/imports/preview). Reports issues for permissioned repair.",
+      "allowed_tools": ["list_workspace"],
+      "can_modify_files": false
+    },
+    "repair": {
+      "role": "self_repair",
+      "purpose": "Diagnoses internal errors and proposes minimal safe patches. Never applies without permission.",
+      "allowed_tools": ["read_file", "patch_file"],
+      "can_modify_files": true,
+      "requires_permission_for": ["apply_patch"]
+    }
+  }
+}

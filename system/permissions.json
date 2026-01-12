@@ -1,0 +1,32 @@
+{
+  "version": "0.1.0",
+  "principles": [
+    "User is the final authority.",
+    "No self-repair without explicit approval.",
+    "No deployment without explicit approval.",
+    "No browser automation against authenticated sites without explicit approval.",
+    "Never request or store credentials unless user opts in."
+  ],
+  "gates": {
+    "self_repair": {
+      "required": true,
+      "ui_label": "Allow self-repair",
+      "prompt_template": "I detected an internal error in {module}. Proposed fix: {summary}. I will touch: {files}. Apply?"
+    },
+    "browser_automation": {
+      "required": true,
+      "ui_label": "Allow browser automation",
+      "prompt_template": "This task needs browser automation (click/scroll/extract). Target: {targets}. Proceed?"
+    },
+    "deploy": {
+      "required": true,
+      "ui_label": "Allow deployment",
+      "prompt_template": "Ready to deploy {artifact}. Destination: {destination}. Proceed?"
+    },
+    "credential_use": {
+      "required": true,
+      "ui_label": "Allow credential use",
+      "prompt_template": "This step requires credentials for {service}. Use stored credentials/session now?"
+    }
+  }
+}

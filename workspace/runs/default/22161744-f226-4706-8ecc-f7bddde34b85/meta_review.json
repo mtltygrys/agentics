@@ -1,0 +1,4 @@
+{
+  "error": "meta_parse_failed",
+  "raw": "```json\n{\n  \"workflow_issues\": [\n    \"Placeholder images used may not align with the client's brand or services.\",\n    \"Potential performance issues due to unoptimized images.\",\n    \"Lack of specific images provided by the client.\"\n  ],\n  \"prompt_improvements\": [\n    \"Specify the need for client-provided images in the initial prompt.\",\n    \"Include a requirement for image optimization in the prompt.\"\n  ],\n  \"tool_improvements\": [\n    \"Integrate a tool for automatic image optimization.\",\n    \"Use a tool that can suggest or generate brand-aligned placeholder images.\"\n  ],\n  \"memory_improvements\": [\n    \"Document the need for client-provided images in the project's initial notes.\",\n    \"Keep a checklist for image optimization and other performance-related tasks.\"\n  ]\n}\n```"
+}

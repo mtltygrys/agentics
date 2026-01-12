@@ -1,0 +1,4 @@
+{
+  "error": "meta_parse_failed",
+  "raw": "```json\n{\n  \"workflow_issues\": [\n    \"Architect parsing failed, blocking the review and testing process.\",\n    \"Assumed architect would parse correctly without validation.\"\n  ],\n  \"prompt_improvements\": [\n    \"Include explicit instructions for validating JSON structure before parsing.\",\n    \"Ensure all keys and values in the JSON are properly formatted and enclosed in quotes.\"\n  ],\n  \"tool_improvements\": [\n    \"Implement a JSON validation tool to check the structure and formatting before parsing.\",\n    \"Enhance error handling to provide more descriptive messages for parsing failures.\"\n  ],\n  \"memory_improvements\": [\n    \"Store previous successful JSON structures to compare and validate new inputs.\",\n    \"Maintain a log of common parsing errors and their fixes for quick reference.\"\n  ]\n}\n```"
+}

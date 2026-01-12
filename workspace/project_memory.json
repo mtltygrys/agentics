@@ -1,0 +1,31 @@
+{
+  "version": "1.0.0",
+  "projects": {
+    "default": {
+      "state": {
+        "pending_execution": false,
+        "proposed_goal": null,
+        "proposed_plan": null,
+        "updated_at": 1768257398.1120586
+      }
+    },
+    "proj_d328aa37": {
+      "state": {
+        "pending_execution": false,
+        "proposed_goal": null,
+        "proposed_scope": null,
+        "proposed_model": null,
+        "last_decision": null,
+        "updated_at": 1768239929.4914455
+      }
+    },
+    "proj_82a24ce5": {
+      "state": {
+        "pending_execution": false,
+        "proposed_goal": null,
+        "proposed_plan": null,
+        "updated_at": 1768246623.106978
+      }
+    }
+  }
+}

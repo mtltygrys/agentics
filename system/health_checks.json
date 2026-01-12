@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "checks": [
+    {
+      "id": "env_mistral_key",
+      "type": "env",
+      "severity": "error",
+      "description": "MISTRAL_API_KEY must be set for chat/workflow.",
+      "target": "MISTRAL_API_KEY",
+      "on_fail": {
+        "action": "ask_user",
+        "message": "MISTRAL_API_KEY is missing. Put it in .env (based on .env.example) and restart the backend."
+      }
+    },
+    {
+      "id": "preview_entry_exists",
+      "type": "file_exists",
+      "severity": "warn",
+      "description": "Preview index.html should exist.",
+      "target": "backend/workspace/preview/index.html",
+      "on_fail": {
+        "action": "auto_create",
+        "requires_permission": false,
+        "message": "Preview entry missing; backend can auto-create default preview page."
+      }
+    },
+    {
+      "id": "workspace_tools_available",
+      "type": "api",
+      "severity": "error",
+      "description": "Workspace tools must be registered in backend.",
+      "target": "backend/main.py",
+      "on_fail": {
+        "action": "propose_fix",
+        "requires_permission": true,
+        "message": "Workspace tools are missing or broken. Repair agent will propose a minimal patch."
+      }
+    }
+  ]
+}

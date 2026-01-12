@@ -1,0 +1,4 @@
+{
+  "error": "architect_parse_failed",
+  "raw": "```json\n{\n  \"goal\": \"Create a website for an electrician\",\n  \"decisions\": [\n    \"Create a basic HTML structure for the electrician's website\",\n    \"Add CSS styling to make the website visually appealing and responsive\"\n  ],\n  \"files_touched\": [\n    \"preview/index.html\",\n    \"preview/styles.css\"\n  ],\n  \"changes_summary\": \"Created HTML and CSS files for the electrician's website with a responsive design\",\n  \"open_questions\": [],\n  \"next_steps\": [\n    \"Review the website design and functionality\",\n    \"Test the website on different devices and screen sizes\",\n    \"Gather feedback and make necessary adjustments\"\n  ],\n  \"risks\": [\n    \"Ensuring the website is fully responsive and functional on all devices\",\n    \"Making sure the design aligns with the electrician's branding and professional image\"\n  ]\n}\n```"
+}
