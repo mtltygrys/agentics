@@ -486,6 +486,21 @@ def tool_describe_visuals(project_id: str, model: str) -> Dict[str, Any]:
     except Exception as e:
         return {"ok": False, "error": f"Failed to describe visuals: {str(e)}"}
 
+def tool_web_search(query: str) -> str:
+    """Performs a web search and returns the results."""
+    # In a real implementation, this would call a search engine API.
+    # For this example, we'll return a simulated result.
+    return json.dumps({
+        "ok": True,
+        "results": [
+            {
+                "title": "Simulated Search Result",
+                "url": "https://example.com",
+                "snippet": "This is a simulated search result for your query."
+            }
+        ]
+    })
+
 TOOLS = [
     {"type": "function", "function": {
         "name": "create_file",
@@ -525,6 +540,11 @@ TOOLS = [
         "name": "delete_file",
         "description": "Deletes a file from the workspace.",
         "parameters": {"type": "object", "properties": {"filename": {"type": "string"}}, "required": ["filename"]},
+    }},
+    {"type": "function", "function": {
+        "name": "web_search",
+        "description": "Performs a web search and returns the results.",
+        "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]},
     }},
 ]
 
@@ -785,6 +805,7 @@ SYSTEM_RULES = (
     "4) VISUAL POLISH: Smooth transitions, hover effects, proper spacing, beautiful typography\n"
     "5) For UI work, ALWAYS create both preview/index.html AND preview/styles.css\n"
     "6) Think like a senior designer at Apple, Stripe, or Vercel - that's your baseline\n"
+    "7) Use the web_search tool to research new technologies and find solutions to problems.\n"
 ) + "\n" + _system_context_snippet()
 
 def _generate_execution_plan(model: str, goal: str, project_id: str) -> Dict[str, Any]:
