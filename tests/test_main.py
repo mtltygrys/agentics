@@ -170,3 +170,13 @@ async def test_workspace_delete():
     assert read_response.json()["ok"] is False
     assert "File not found" in read_response.json()["error"]
 
+@pytest.mark.asyncio
+async def test_tool_web_search():
+    from main import tool_web_search
+    import json
+    result_str = tool_web_search("test query")
+    result = json.loads(result_str)
+    assert result["ok"] is True
+    assert "results" in result
+    assert len(result["results"]) == 1
+    assert result["results"][0]["title"] == "Simulated Search Result"

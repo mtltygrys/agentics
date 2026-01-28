@@ -4,8 +4,8 @@
     "default": {
       "self_modify": false,
       "file_write": true,
-      "shell": true,
-      "web": true
+      "shell": false,
+      "web": false
     },
     "proj_4fe58000": {
       "self_modify": false,
